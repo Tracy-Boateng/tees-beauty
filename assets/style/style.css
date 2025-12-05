@@ -66,13 +66,13 @@ body {
 }
 
 .logo img {
-  height: 50px;
+  height: 40px;
 }
 
 .nav-links a {
   margin-left: 2rem;
   text-decoration: none;
-  color: var(--bg);
+  color: var(--btn-hover);
   font-weight: bold;
   transition: color 0.3s;
 }
@@ -102,7 +102,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: #e1b75c;
   position: relative;
 }
 
@@ -139,7 +139,7 @@ body {
 }
 
 .hero-btn, .about-btn {
-  padding: 0.65rem 1.2rem;
+  padding: 0.55rem 0.59rem;
   font-weight: bold;
   border-radius: 5px;
   text-decoration: none;
@@ -147,7 +147,7 @@ body {
 }
 
 .hero-btn {
-  background-color: var(--accent-gold);
+  background-color: var(--text-primary);
   color: #fff;
 }
 
@@ -156,7 +156,7 @@ body {
 }
 
 .about-btn {
-  background-color: var(--accent-gold);
+  background-color: var(--accent);
   color: #fff;
 }
 
@@ -180,7 +180,7 @@ body {
 .about-teaser h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--accent);
+  color: var(--accent-gold);
 }
 
 .about-teaser p {
@@ -241,6 +241,133 @@ body {
   font-weight: bold;
 }
 
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-card img {
+    height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .grid-card img {
+    height: 200px;
+  }
+}
+
+/* ---------- MODAL & LIGHTBOX ---------- */
+.modal, #lightbox {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 200;
+}
+
+.modal[aria-hidden="false"], #lightbox[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content, .modal-inner {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 700px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.modal-thumb {
+  display: inline-block;
+  margin: 0.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.modal-thumb img {
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-thumb:hover {
+  transform: scale(1.05);
+}
+
+.modal-close, .lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.modal-service {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 250px;
+  flex: 1 1 250px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.modal-service h4 {
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.modal-service p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.modal-service button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.modal-service button:hover {
+  background: var(--btn-hover);
+}
+
+/* ---------- MODAL MOBILE ---------- */
+@media (max-width: 768px) {
+  .modal-service { width: 45%; }
+}
+@media (max-width: 480px) {
+  .modal-service { width: 100%; }
+}
 
 
 
@@ -261,8 +388,49 @@ body {
 
 
 
+.booking {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: var(--panel);
+  border-radius: 15px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
 
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
 
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-weight: bold;
+}
+
+.booking-form input, .booking-form select {
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.booking-form button {
+  background-color: var(--accent-teal);
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.booking-form button:hover {
+  background-color: #ede7dd;
+}
 
 
 .booking-map {
@@ -300,3 +468,89 @@ body {
     height: 400px;
   }
 }
+
+
+
+.page-discount {
+  background: linear-gradient(90deg,#df87aa,#a9dfef);
+  padding: 1.25rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-discount .btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.page-discount a.btn {
+  background-color: var(--accent);
+  color: var(--bg);
+  padding: 0.65rem 1.2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+
+
+
+.site-footer {
+  background-color: #111;
+  color: #ddd;
+  padding: 3rem 2rem;
+  text-align: left;
+  border-top: 4px solid var(--accent-gold);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+}
+
+.footer-column h4 {
+  color: var(--accent-rose);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-column p, .footer-column a, .footer-column li {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #ddd;
+}
+
+.footer-column a:hover {
+  color: var(--accent);
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.site-footer-bottom {
+  width: 100%;
+  border-top: 1px solid #444;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 1024px) {
+  .modal-gallery-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+@media (max-width: 600px) {
+  .modal-gallery-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+
