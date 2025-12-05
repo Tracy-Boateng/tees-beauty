@@ -45,50 +45,49 @@
     </section>
     <section class="services" id="services">
         <h2>Our Services</h2>
-        <div class="category-grid service-grid">
+        <div class="grid-container service-grid">
+  <button class="grid-card" data-category="microblading" aria-label="Microblading">
+    <img src="./assets/media/browhero1.jpg" alt="Microblading">
+    <div class="category-label">Microblading</div>
+  </button>
 
-        <button class="service-card" data-category="microblading" aria-label="Microblading">
-        <img src="./assets/media/browhero1.jpg" alt="Microblading">
-        <div class="category-label">Microblading</div>
+  <button class="grid-card" data-category="makeup" aria-label="Makeup Services">
+    <img src="./assets/media/mhero.jpg" alt="Makeup Service">
+    <div class="category-label">Makeup</div>
+  </button>
 
-        <button class=" service-card" data-category="makeup" aria-label="Makeup Services">
-        <img src="./assets/media/mhero.jpg" alt="Makeup Service">
-        <div class="category-label">Makeup</div>
-        </button>
+  <button class="grid-card" data-category="lash" aria-label="Lash Extensions">
+    <img src="./assets/media/lashhero.jpg" alt="Lash Extensions">
+    <div class="category-label">Lash Extensions</div>
+  </button>
+</div>
 
-        <button class="service-card" data-category="lash" aria-label="Lash Extensions">
-        <img src="./assets/media/lashhero.jpg" alt="Lash Extensions">
-        <div class="category-label">Lash Extensions</div>
-        </button>
-        </div>
-    </section>
-    <div id="serviceModal" class="modal" aria-hidden="true">
-        <div class="modal-inner">
-            <button class="modal-close">&times;</button>
-            <h3 class="modal-title"></h3>
-            <div class="modal-content"></div>
-        </div>
-    </div>
-    <section class="category-gallery">
+       
+    
+    <!-- <section class="category-gallery"> -->
         <h2>Our Work</h2>
-        <div class="category-grid">
+        <div class="grid-container category-grid">
+  <button class="grid-card" data-category="microblading" aria-label="Open Microblading gallery">
+    <img src="./assets/media/browhero.jpg" alt="Microblading preview">
+    <div class="category-label">Microblading</div>
+  </button>
 
-        <button class="category-item" data-category="microblading" aria-label="Open Microblading gallery">
-        <img src="./assets/media/browhero.jpg" alt="Microblading preview">
-        <div class="category-label">Microblading</div>
-        </button>
+  <button class="grid-card" data-category="makeup" aria-label="Open Makeup gallery">
+    <img src="./assets/media/makeup01.jpg" alt="Makeup preview">
+    <div class="category-label">Makeup</div>
+  </button>
 
-        <button class="category-item" data-category="makeup" aria-label="Open Makeup gallery">
-        <img src="./assets/media/makeup01.jpg" alt="Makeup preview">
-        <div class="category-label">Makeup</div>
-        </button>
+  <button class="grid-card" data-category="lash" aria-label="Open Lash gallery">
+    <img src="./assets/media/hero01.jpg" alt="Lash preview">
+    <div class="category-label">Lash</div>
+  </button>
+</div>
 
-        <button class="category-item" data-category="lash" aria-label="Open Lash gallery">
-        <img src="./assets/media/hero01.jpg" alt="Lash preview">
-        <div class="category-label">Lash</div>
-        </button>
         </div>
     </section>
+
+    
+
         <div id="galleryModal" class="modal" aria-hidden="true">
         <div class="modal-inner" role="dialog" aria-modal="true">
         <button class="modal-close" aria-label="Close gallery">&times;</button>
