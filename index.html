@@ -1,196 +1,199 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Navjot Kaur">
-    <meta name="description" content="Cookies">
-    <meta name="keywords" content="html, css, web, web development, javascript">
-    <title>Beauty Studio</title>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" type="text/css">
-    <link rel="icon" href="./assets/media/favicon.png?v=2" type="image/x-icon">
-    <script src="./assets/script/app.js" defer></script>
-    <link rel="stylesheet" href="./assets/style/style.css" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Navjot Kaur">
+  <meta name="description" content="Beauty Studio">
+  <meta name="keywords" content="html, css, web, web development, javascript">
+  <title>Beauty Studio</title>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" type="text/css">
+  <link rel="icon" href="./assets/media/lo" type="image/x-icon">
+  <script src="./assets/script/app.js" defer></script>
+  <link rel="stylesheet" href="./assets/style/style.css" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <div class="logo">
-            <a href="#hero"><img src="./assets/media/favicon.png" alt="Lash Studio Logo"></a>
-            </div>
-            <nav class="nav-links">
-            <a href="#hero">Home</a>
-            <a href="#about">About</a>
-            <a href="#booking">Contact Us</a>
-            </nav>
-        </div>
-    </header>
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Your Style, Our Passion</h2>
-            <div class="hero-buttons">
-            <a href="#booking" class="btn hero-btn">Book Online</a>
-            </div>
-        </div>
-    </section>
-    <section class="about-teaser" id="about">
-        <h2>A Luxury Lash & Beauty Institution</h2>
-        <p>
-            Since 2015, we’ve specialized in lashes, makeup, and microblading serving clients who want luxury, precision, and care. Whether you’re looking for a bold glam look, subtle enhancements, or professional microblading, we make every appointment a pampering experience.
-        </p>
-        <a href="about.html" class="btn about-btn">About Us</a>
-    </section>
-    <section class="services" id="services">
-        <h2>Our Services</h2>
-        <div class="grid-container service-grid">
-  <button class="grid-card" data-category="microblading" aria-label="Microblading">
-    <img src="./assets/media/browhero1.jpg" alt="Microblading">
-    <div class="category-label">Microblading</div>
-  </button>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="#hero"><img src="./assets/media/logo1.jpg" alt="Lash Studio Logo"></a>
+      </div>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#booking">Contact Us</a>
+      </nav>
+    </div>
+  </header>
 
-  <button class="grid-card" data-category="makeup" aria-label="Makeup Services">
-    <img src="./assets/media/mhero.jpg" alt="Makeup Service">
-    <div class="category-label">Makeup</div>
-  </button>
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h2>Your Style, Our Passion</h2>
+      <div class="hero-buttons">
+        <a href="#booking" class="btn hero-btn">Book Online</a>
+      </div>
+    </div>
+  </section>
 
-  <button class="grid-card" data-category="lash" aria-label="Lash Extensions">
-    <img src="./assets/media/lashhero.jpg" alt="Lash Extensions">
-    <div class="category-label">Lash Extensions</div>
-  </button>
+  <section class="about-teaser" id="about">
+    <h2>A Luxury Lash & Beauty Institution</h2>
+    <p>
+      Since 2015, we’ve specialized in lashes, makeup, and microblading serving clients who want luxury, precision, and care. Whether you’re looking for a bold glam look, subtle enhancements, or professional microblading, we make every appointment a pampering experience.
+    </p>
+    <a href="about.html" class="btn about-btn">About Us</a>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="grid-container service-grid">
+      <button class="grid-card" data-category="microblading" aria-label="Microblading">
+        <img src="./assets/media/browhero1.jpg" alt="Microblading">
+        <div class="category-label">Microblading</div>
+      </button>
+
+      <button class="grid-card" data-category="makeup" aria-label="Makeup Services">
+        <img src="./assets/media/mhero.jpg" alt="Makeup Service">
+        <div class="category-label">Makeup</div>
+      </button>
+
+      <button class="grid-card" data-category="lash" aria-label="Lash Extensions">
+        <img src="./assets/media/lashhero.jpg" alt="Lash Extensions">
+        <div class="category-label">Lash Extensions</div>
+      </button>
+    </div>
+
+    <h2>Our Work</h2>
+    <div class="grid-container category-grid">
+      <button class="grid-card category-item" data-category="microblading" aria-label="Open Microblading gallery">
+        <img src="./assets/media/browhero.jpg" alt="Microblading preview">
+        <div class="category-label">Microblading</div>
+      </button>
+
+      <button class="grid-card category-item" data-category="makeup" aria-label="Open Makeup gallery">
+        <img src="./assets/media/makeup01.jpg" alt="Makeup preview">
+        <div class="category-label">Makeup</div>
+      </button>
+
+      <button class="grid-card category-item" data-category="lash" aria-label="Open Lash gallery">
+        <img src="./assets/media/hero01.jpg" alt="Lash preview">
+        <div class="category-label">Lash</div>
+      </button>
+    </div>
+  </section>
+
+  
+  <div id="serviceModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close">×</button>
+    <h2 class="modal-title"></h2>
+  </div>
 </div>
 
-       
-    
-    <!-- <section class="category-gallery"> -->
-        <h2>Our Work</h2>
-        <div class="grid-container category-grid">
-  <button class="grid-card" data-category="microblading" aria-label="Open Microblading gallery">
-    <img src="./assets/media/browhero.jpg" alt="Microblading preview">
-    <div class="category-label">Microblading</div>
-  </button>
 
-  <button class="grid-card" data-category="makeup" aria-label="Open Makeup gallery">
-    <img src="./assets/media/makeup01.jpg" alt="Makeup preview">
-    <div class="category-label">Makeup</div>
-  </button>
-
-  <button class="grid-card" data-category="lash" aria-label="Open Lash gallery">
-    <img src="./assets/media/hero01.jpg" alt="Lash preview">
-    <div class="category-label">Lash</div>
-  </button>
-</div>
-
-        </div>
-    </section>
-
-    
-
-        <div id="galleryModal" class="modal" aria-hidden="true">
-        <div class="modal-inner" role="dialog" aria-modal="true">
-        <button class="modal-close" aria-label="Close gallery">&times;</button>
-        <h3 class="modal-title"></h3>
-
-        <div class="modal-gallery-grid" id="modalGalleryGrid">
-        </div>
-
-        <div class="lightbox" id="lightbox" aria-hidden="true">
-        <button class="lightbox-close" aria-label="Close full image">&times;</button>
-        <img id="lightboxImg" src="" alt="">
-        <div class="lightbox-controls">
-            <button id="lightboxPrev" aria-label="Previous image">&#10094;</button>
-            <button id="lightboxNext" aria-label="Next image">&#10095;</button>
-        </div>
+  
+  <div id="galleryModal" class="modal" aria-hidden="true">
+    <div class="modal-inner">
+      <button class="modal-close">×</button>
+      <h2 class="modal-title"></h2>
+      <div id="modalGalleryGrid"></div>
     </div>
+  </div>
+
+  
+  <div id="lightbox" aria-hidden="true">
+    <button class="lightbox-close">×</button>
+    <button id="lightboxPrev">‹</button>
+    <img id="lightboxImg" />
+    <button id="lightboxNext">›</button>
+  </div>
+
+
+  <section class="booking-map" id="booking">
+    <div class="booking-wrapper">
+      <h2>Book Your Appointment</h2>
+      <form class="booking-form">
+        <label>Name
+          <input type="text" required>
+        </label>
+        <label>Email
+          <input type="email" required>
+        </label>
+        <label>Service
+          <select required>
+            <option value="Classic Lash Set">Classic Lash Set</option>
+            <option value="Hybrid Lash Set">Hybrid Lash Set</option>
+            <option value="Volume Lash Set">Volume Lash Set</option>
+            <option value="Soft Glam Makeup">Soft Glam Makeup</option>
+            <option value="Full Glam Makeup">Full Glam Makeup</option>
+            <option value="Microblading">Microblading</option>
+          </select>
+        </label>
+        <label>Date & Time
+          <input type="datetime-local" required>
+        </label>
+        <button type="submit">Book Appointment</button>
+      </form>
     </div>
+    <div id="map" class="map-wrapper">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44580.36287358331!2d-97.193895!3d49.895136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea715f4d42b0c7%3A0x75a4e2e2fbf3d4a5!2sWinnipeg%2C%20Manitoba!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
+  </section>
 
-    <section class="booking-map">
-        <div class="booking-wrapper">
-            <h2>Book Your Appointment</h2>
-            <form class="booking-form">
-            <label>Name
-                <input type="text" required>
-            </label>
-            <label>Email
-                <input type="email" required>
-            </label>
-            <label>Service
-                <select required>
-                <option value="Classic Lash Set">Classic Lash Set</option>
-                <option value="Hybrid Lash Set">Hybrid Lash Set</option>
-                <option value="Volume Lash Set">Volume Lash Set</option>
-                <option value="Soft Glam Makeup">Soft Glam Makeup</option>
-                <option value="Full Glam Makeup">Full Glam Makeup</option>
-                <option value="Microblading">Microblading</option>
-                </select>
-            </label>
-            <label>Date & Time
-                <input type="datetime-local" required>
-            </label>
-            <button type="submit">Book Appointment</button>
-            </form>
-        </div>
-        <div id="map" class="map-wrapper">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44580.36287358331!2d-97.193895!3d49.895136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea715f4d42b0c7%3A0x75a4e2e2fbf3d4a5!2sWinnipeg%2C%20Manitoba!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca" 
-                width="600" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-    </section>
+  <section class="page-discount">
+    <div class="discount-inner">
+      <h3>Limited Time Offer</h3>
+      <p>Book any service this month and get 15% off your second service.</p>
+      <a class="btn" href="#booking">Book Now</a>
+    </div>
+  </section>
 
-    <section class="page-discount">
-        <div class="discount-inner">
-            <h3>Limited Time Offer</h3>
-            <p>Book any service this month and get 15% off your second service .</p>
-            
-            <a class="btn" href="#booking">Book Now</a>
-        </div>
-    </section>
-
-<footer class="site-footer">
-
+  <footer class="site-footer">
     <div class="footer-column">
-        <h4>Opening Times</h4>
-        <ul class="footer-list">
-        <li>Mon: 10:00 AM - 5:00 AM</li>
-        <li>Tues: 10:00 AM - 5:00 AM</li>
-        <li>Wed: 10:00 AM - 5:00 AM</li>
-        <li>Thur: 10:00 AM - 5:00 AM</li>
-        <li>Fri: By Apppointment</li>
+      <h4>Opening Times</h4>
+      <ul class="footer-list">
+        <li>Mon: 10:00 AM - 5:00 PM</li>
+        <li>Tues: 10:00 AM - 5:00 PM</li>
+        <li>Wed: 10:00 AM - 5:00 PM</li>
+        <li>Thur: 10:00 AM - 5:00 PM</li>
+        <li>Fri: By Appointment</li>
         <li>Sat: 10:00 AM - 5:00 PM</li>
         <li>Sun: Closed</li>
-        </ul>
+      </ul>
     </div>
 
     <div class="footer-column">
-        <h4>Lash Studio</h4>
-        <p>123 Beauty Ave,</p>
-        <p>Winnipeg,</p>
-        <p>Manitoba - Canada</p>
-        <p>Phone: (413) 456-7890</p>
-        <p>Email: info@beautystudio.com</p>
+      <h4>Lash Studio</h4>
+      <p>123 Beauty Ave,</p>
+      <p>Winnipeg,</p>
+      <p>Manitoba - Canada</p>
+      <p>Phone: (413) 456-7890</p>
+      <p>Email: info@beautystudio.com</p>
     </div>
 
     <div class="footer-column">
-        <h4>Follow Us</h4>
-        <ul class="footer-list">
+      <h4>Follow Us</h4>
+      <ul class="footer-list">
         <li><a href="#" target="_blank">Instagram</a></li>
         <li><a href="#" target="_blank">TikTok</a></li>
         <li><a href="#" target="_blank">Facebook</a></li>
-        </ul>
+      </ul>
     </div>
 
     <div class="site-footer-bottom">
-        © 2025 Beauty Studio • All rights reserved
+      © 2025 Beauty Studio • All rights reserved
     </div>
-</footer>
+  </footer>
 </body>
 </html>
