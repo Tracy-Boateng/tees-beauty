@@ -152,3 +152,18 @@ document.addEventListener('DOMContentLoaded', () => {
       else { alert(`Thank you, ${name}! Your appointment for ${service} is confirmed on ${dateTime}.`); form.reset(); }
     } catch(err) { console.error(err); alert('Error submitting appointment.'); }
   });
+
+    const sections = document.querySelectorAll('section');
+  sections.forEach((sec,i)=>{
+    sec.style.opacity = 0;
+    sec.style.transform = 'translateY(30px)';
+    setTimeout(()=>{ sec.style.transition='opacity 0.8s ease, transform 0.8s ease'; sec.style.opacity=1; sec.style.transform='translateY(0)'; }, i*200);
+  });
+
+  const heroElements = document.querySelectorAll('.hero-content h1, .hero-content p, .hero-content .hero-btn, .hero-content .about-btn');
+  heroElements.forEach((el,i)=>{
+    el.style.opacity=0;
+    el.style.transform='translateY(20px)';
+    setTimeout(()=>{ el.style.transition='opacity 1s ease, transform 1s ease'; el.style.opacity=1; el.style.transform='translateY(0)'; }, 200 + i*300);
+  });
+});
