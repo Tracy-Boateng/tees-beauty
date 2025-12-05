@@ -46,8 +46,21 @@ The Beauty Studio website is designed for showcasing beauty services such as las
 
 ---
 
+##  Live Demo
+
+This project is hosted using **GitHub Pages**.  
+
+You can view the live site here:  
+[**Tees Beauty Website**](https://tracy-boateng.github.io/tees-beauty/)
+
+_Last deployed by @Tracy-Boateng. Built and deployed using GitHub Pages._
+
+
 ## Setup & Installation
 
 Repository :
    ```bash
    git clone https://github.com/Tracy-Boateng/tees-beauty.git
+
+
+
