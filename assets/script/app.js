@@ -131,27 +131,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ==============================
-     BOOKING FORM SUBMIT
-  ============================== */
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const name = form.querySelector('input[type="text"]').value;
-    const email = form.querySelector('input[type="email"]').value;
-    const service = form.querySelector('select').value;
-    const dateTime = form.querySelector('input[type="datetime-local"]').value;
+  
+ document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".booking-form");
 
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbzgLg5jknXC5Czd2v6deEMXd--MZGJOpLFHUHzIvvs7RrE_Lpc963oGi5GQFkmTUlKg/exec', {
-        method: 'POST',
-        body: JSON.stringify({ name, email, service, dateTime }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-      const result = await response.json();
-      if (result.status === 'taken') alert(`${dateTime} is already booked. Please select another time.`);
-      else { alert(`Thank you, ${name}! Your appointment for ${service} is confirmed on ${dateTime}.`); form.reset(); }
-    } catch(err) { console.error(err); alert('Error submitting appointment.'); }
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = form.querySelector("input[name='name']").value.trim();
+    const email = form.querySelector("input[name='email']").value.trim();
+    const service = form.querySelector("select[name='service']").value;
+    const dateTime = form.querySelector("input[name='dateTime']").value;
+
+    if (!name || !email || !service || !dateTime) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    const booking = { name, email, service, dateTime };
+
+    
+    const allBookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+
+    
+    allBookings.push(booking);
+
+    
+    localStorage.setItem("bookings", JSON.stringify(allBookings));
+
+    alert("Your booking has been saved!");
+
+    
+    form.reset();
   });
+});
 
     const sections = document.querySelectorAll('section');
   sections.forEach((sec,i)=>{
