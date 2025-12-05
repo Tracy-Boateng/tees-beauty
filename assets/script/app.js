@@ -132,18 +132,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   
- document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".booking-form");
+const formBooking = document.querySelector(".booking-form");
 
-  if (!form) return;
-
-  form.addEventListener("submit", (e) => {
+if (formBooking) {
+  formBooking.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const name = form.querySelector("input[name='name']").value.trim();
-    const email = form.querySelector("input[name='email']").value.trim();
-    const service = form.querySelector("select[name='service']").value;
-    const dateTime = form.querySelector("input[name='dateTime']").value;
+    const name = formBooking.querySelector("input[name='name']").value.trim();
+    const email = formBooking.querySelector("input[name='email']").value.trim();
+    const service = formBooking.querySelector("select[name='service']").value;
+    const dateTime = formBooking.querySelector("input[name='dateTime']").value;
 
     if (!name || !email || !service || !dateTime) {
       alert("Please fill out all fields.");
@@ -152,21 +150,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const booking = { name, email, service, dateTime };
 
-    
     const allBookings = JSON.parse(localStorage.getItem("bookings") || "[]");
 
-    
     allBookings.push(booking);
-
-    
     localStorage.setItem("bookings", JSON.stringify(allBookings));
 
     alert("Your booking has been saved!");
 
-    
-    form.reset();
+    formBooking.reset();
   });
-});
+}
+
 
     const sections = document.querySelectorAll('section');
   sections.forEach((sec,i)=>{
