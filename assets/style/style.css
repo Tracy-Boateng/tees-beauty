@@ -1,0 +1,171 @@
+:root {
+ 
+  --bg: #f6f6f8;
+  --bg-light: #f7f6f5;
+  --bg-dark: #1c1c1c;
+  --panel: #ffffff;
+
+
+  --text: #333;
+  --text-primary: #222;
+  --text-secondary: #555;
+  --muted: #666;
+
+
+  --accent: #d63384;
+  --accent-gold: #d4af37;
+  --accent-rose: #e0a899;
+  --accent-peach: #efd5cb;
+  --accent-coral: #e89f91;
+  --accent-teal: #4db6ac;
+
+
+  --btn-bg: var(--accent-gold);
+  --btn-hover: #886b1a;
+  --btn-text: #fff;
+  
+
+  --border-light: #ddd;
+  --border-dark: #333;
+
+
+  --shadow-soft: rgba(0,0,0,0.08);
+  --shadow-strong: rgba(0,0,0,0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--panel);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.site-header {
+  width: 100%;
+  color: var(--bg);
+  background-color: var(--bg-dark);
+  box-shadow: 0 2px 5px var(--shadow-soft);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-links a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: var(--bg);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    margin-top: 0.5rem;
+  }
+  .nav-links a {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+}
+
+.hero {
+  height: 100vh;
+  background: url('../media/mainhero1.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+  padding: 0 1.5rem;
+  z-index: 2;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn, .about-btn {
+  padding: 0.65rem 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero-btn {
+  background-color: var(--accent-gold);
+  color: #fff;
+}
+
+.hero-btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.about-btn {
+  background-color: var(--accent-gold);
+  color: #fff;
+}
+
+.about-btn:hover {
+  background-color: var(--btn-hover);
+}
+
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
