@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateTime = form.querySelector('input[type="datetime-local"]').value;
 
     try {
-      const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec', {
+      const response = await fetch('pk.eyJ1IjoiZ3VybGlua2F1ciIsImEiOiJjbHExYjM4cHUwNzE3MnBud25qNDlmc2VjIn0.Jeu9BD0h1vILAwXce8dQqw', {
         method: 'POST',
         body: JSON.stringify({ name, email, service, dateTime }),
         headers: { 'Content-Type': 'application/json' }
