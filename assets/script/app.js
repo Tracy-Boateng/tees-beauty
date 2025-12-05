@@ -70,3 +70,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
   serviceModalClose?.addEventListener('click', () => serviceModal.setAttribute('aria-hidden', 'true'));
   serviceModal?.addEventListener('click', e => { if (e.target === serviceModal) serviceModal.setAttribute('aria-hidden', 'true'); });
+
+   const categories = {
+    makeup: ['makeup01.jpg','makeup02.jpg','makeup03.jpg','makeup04.jpg','makeup05.jpg','makeup06.jpg'],
+    lash: ['lash01.jpg','lash02.jpg','lash03.jpg','lash04.jpg','lash05.jpg','lash06.jpg'],
+    microblading: ['microblade01.jpg','microblade02.jpg','microblade03.jpg','microblade04.jpg','microblade05.jpg','microblade06.jpg']
+  };
+
+  const galleryModal = document.getElementById('galleryModal');
+  const galleryModalGrid = document.getElementById('modalGalleryGrid');
+  const galleryModalTitle = galleryModal?.querySelector('.modal-title');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lbPrev = document.getElementById('lightboxPrev');
+  const lbNext = document.getElementById('lightboxNext');
+  const lbClose = document.querySelector('.lightbox-close');
+
+  let currentCategory = null, currentIndex = 0, currentArray = [];
+
+  function openGalleryModal(cat) {
+    if (!categories[cat]) return;
+    currentCategory = cat;
+    currentArray = categories[cat];
+    galleryModalTitle.textContent = cat.charAt(0).toUpperCase() + cat.slice(1) + ' — Portfolio';
+    galleryModal.setAttribute('aria-hidden', 'false');
+    galleryModalGrid.innerHTML = '';
+
+    currentArray.forEach((file, i) => {
+      const div = document.createElement('div');
+      div.className = 'modal-thumb';
+      const img = document.createElement('img');
+      img.src = `./assets/media/${file}`;
+      img.alt = `${cat} ${i+1}`;
+      img.addEventListener('click', () => openLightbox(i));
+      div.appendChild(img);
+      galleryModalGrid.appendChild(div);
+    });
+  }
+
+  function closeGalleryModal() { galleryModal.setAttribute('aria-hidden', 'true'); }
+  function openLightbox(i) { currentIndex = i; lightboxImg.src = `./assets/media/${currentArray[currentIndex]}`; lightbox.setAttribute('aria-hidden', 'false'); }
+  function closeLightbox() { lightbox.setAttribute('aria-hidden', 'true'); }
+
+  document.querySelectorAll('.category-item').forEach(item => item.addEventListener('click', () => openGalleryModal(item.dataset.category)));
+  galleryModal?.querySelectorAll('.modal-close').forEach(btn => btn.addEventListener('click', closeGalleryModal));
+  galleryModal?.addEventListener('click', e => { if (e.target === galleryModal) closeGalleryModal(); });
+
+  lbPrev?.addEventListener('click', () => { currentIndex = (currentIndex-1+currentArray.length)%currentArray.length; openLightbox(currentIndex); });
+  lbNext?.addEventListener('click', () => { currentIndex = (currentIndex+1)%currentArray.length; openLightbox(currentIndex); });
+  lbClose?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+  document.addEventListener('keydown', e => {
+    if (lightbox?.getAttribute('aria-hidden') === 'false') {
+      if (e.key === 'ArrowLeft') lbPrev.click();
+      if (e.key === 'ArrowRight') lbNext.click();
+      if (e.key === 'Escape') closeLightbox();
+    } else if (galleryModal?.getAttribute('aria-hidden') === 'false') {
+      if (e.key === 'Escape') closeGalleryModal();
+    }
+  });
