@@ -130,3 +130,25 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape') closeGalleryModal();
     }
   });
+
+  /* ==============================
+     BOOKING FORM SUBMIT
+  ============================== */
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const name = form.querySelector('input[type="text"]').value;
+    const email = form.querySelector('input[type="email"]').value;
+    const service = form.querySelector('select').value;
+    const dateTime = form.querySelector('input[type="datetime-local"]').value;
+
+    try {
+      const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec', {
+        method: 'POST',
+        body: JSON.stringify({ name, email, service, dateTime }),
+        headers: { 'Content-Type': 'application/json' }
+      });
+      const result = await response.json();
+      if (result.status === 'taken') alert(`${dateTime} is already booked. Please select another time.`);
+      else { alert(`Thank you, ${name}! Your appointment for ${service} is confirmed on ${dateTime}.`); form.reset(); }
+    } catch(err) { console.error(err); alert('Error submitting appointment.'); }
+  });
